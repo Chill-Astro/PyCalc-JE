@@ -17,7 +17,6 @@ Installation and Requirements :
   [ OR ]
 - Any System with JRE Installed [ For running ].
 - Build the file in any IDE / Code Editior or in Terminal.
-- No installation needed if using PyCalc-JE.exe on Windows Systems.
 
 ![image](https://github.com/user-attachments/assets/a6490b47-582c-45b2-a95d-8e4e87c2f305)
 
