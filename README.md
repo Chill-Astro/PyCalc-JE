@@ -1,6 +1,6 @@
-PyCalc-CE : A Simple and Lightweight Calculator. Now in C++!
+PyCalc-JE : A Simple and Lightweight Calculator. Now in Java!
 
-CE - C++ Edition
+JE - Java Edition
 
 Features Include :
 
@@ -10,14 +10,16 @@ Features Include :
 - Highly Powerful and extendible. ✅
 - Fast and Error-Proof Calculations. ✅
 - High Precision for decimals. ✅
-- High Speed thanks to C++. ✅
+- Fully cross platform. ✅
 
 Installation and Requirements :
 
-- Any system with MSVC / GCC / Clang installed [ For building ].
+- Any system with JDK installed [ For building and running ].
+  [ OR ]
+- Any System with JRE Installed [ For running ].
 - Build the file in any IDE / Code Editior or in Terminal.
-- No installation needed if using PyCalc-CE.exe on Windows Systems or PyCalc-CE for Linux Systems!
+- No installation needed if using PyCalc-JE.exe on Windows Systems.
 
-![image](https://github.com/user-attachments/assets/b372982d-1035-4079-8e4b-94c88380029d)
+![image](https://github.com/user-attachments/assets/a6490b47-582c-45b2-a95d-8e4e87c2f305)
 
 Simple! Powerful! Lightweight!
