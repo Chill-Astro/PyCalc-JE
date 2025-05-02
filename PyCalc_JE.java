@@ -5,8 +5,8 @@ import java.net.URI;
 import java.net.URL;
 
 public class PyCalc_JE {
-    private static final String CURRENT_VERSION = "1.1";
-    private static final String UPDATE_VERSION_URL = "https://gist.githubusercontent.com/Chill-Astro/e8c32d9a2b30780e3b6fd2819a51b330/raw/PyC_V.txt";
+    private static final String CURRENT_VERSION = "1.1"; // OpenScan Integration + Update Check + Bug Fixes
+    private static final String UPDATE_VERSION_URL = "https://gist.github.com/Chill-Astro/b5f73cba04b79459db4ccdfad224fa54/raw/PyCJV_V.txt";
 
     private static void checkForUpdates() {
         try {
@@ -29,7 +29,7 @@ public class PyCalc_JE {
                                        "Please visit github.com/Chill-Astro/PyCalc-JE to download the latest release!\n" +
                                        "-----------------------");
                 } else if (latestVersion.equals(CURRENT_VERSION)) {
-                    System.out.println("Hurrah! PyCalc is up to date!");
+                    System.out.println("Hurrah! PyCalc is up to date!\n");
                 } else {
                     System.out.println("WARNING!  This is a DEV. Build of PyCalc!\n");
                 }
@@ -46,10 +46,11 @@ public class PyCalc_JE {
         }
     }
     public static void main(String[] args) {
-        checkForUpdates();
         OpenScan sc = new OpenScan();
         System.out.println("PyCalc-JE : A Simple and Lightweight Calculator. Now in Java!\n" +
-                           "Version : " + CURRENT_VERSION + "\n");        while (true) {
+                           "Version : " + CURRENT_VERSION + "\n");  
+                           checkForUpdates();
+                           while (true) {
             System.out.println("Select a Mathematical Operation : \n" +
                                "1. Addition\n" + "2. Subtraction\n" + "3. Multiplication\n" + "4. Division\n" + "5. Exponents (x^y)\n" + "6. Square Root\n" +
                                "7. Cube Root\n" + "8. Approximate / Rounding\n" + "9. Heron's Formula\n" + "10. Simple Interest\n" + "11. Compound Interest\n" + "12. Prime No. Check\n" +
