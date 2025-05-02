@@ -1,12 +1,12 @@
 To Build and Run this Project, you need to have JDK installed on your machine.
 
 To Compile from source, 
-javac PyCalc_JE.java
+javac *.java
 
 If using precompiled PyCalc_JE.class, JDK-24 or higher is required.
 
 Once compiled do this :
-jar cfm PyCalc-JE.jar manifest.txt PyCalc_JE.class
+jar cfm PyCalc-JE.jar manifest.txt PyCalc_JE.class OpenScan.class
 
 To run the CUI App, 
 java -jar PyCalc-JE.jar
