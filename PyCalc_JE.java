@@ -1,62 +1,18 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import java.net.URL;
-
 public class PyCalc_JE {
-    private static final String CURRENT_VERSION = "1.1"; // OpenScan Integration + Update Check + Bug Fixes
-    private static final String UPDATE_VERSION_URL = "https://gist.github.com/Chill-Astro/b5f73cba04b79459db4ccdfad224fa54/raw/PyCJV_V.txt";
-
-    private static void checkForUpdates() {
-        try {
-            URI uri = new URI(UPDATE_VERSION_URL); // Use URI to create a URL
-            URL url = uri.toURL(); // Convert URI to URL
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setConnectTimeout(5000); // Timeout after 5 seconds
-            connection.setReadTimeout(5000);
-            connection.setRequestMethod("GET");
-
-            int responseCode = connection.getResponseCode();
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                String latestVersion = reader.readLine().trim();
-                reader.close();
-
-                if (latestVersion.compareTo(CURRENT_VERSION) > 0) {
-                    System.out.println("--- UPDATE AVAILABLE! ---\n" +
-                                       "Yaaay! A NEW version of PyCalc-JE is Available! : " + latestVersion + "\n" +
-                                       "Please visit github.com/Chill-Astro/PyCalc-JE to download the latest release!\n" +
-                                       "-----------------------");
-                } else if (latestVersion.equals(CURRENT_VERSION)) {
-                    System.out.println("Hurrah! PyCalc is up to date!\n");
-                } else {
-                    System.out.println("WARNING!  This is a DEV. Build of PyCalc!\n");
-                }
-            } else {
-                System.out.println("--- UPDATE CHECK FAILED! ---\n" +
-                                   "WARNING! Could not check for updates. Please check your internet connection.\n" +
-                                   "------------------------");
-            }
-        } catch (Exception e) {
-            System.out.println("--- UPDATE CHECK FAILED ---\n" +
-                               "WARNING! Error occurred while checking for updates.\n" +
-                               "Error: " + e.getMessage() + "\n" +
-                               "------------------------");
-        }
-    }
+    private static final String CURRENT_VERSION = "1.2"; // Net-Update Integration + Native Executable
+    private static final String UPDATE_VERSION_URL = "https://gist.github.com/Chill-Astro/b5f73cba04b79459db4ccdfad224fa54/raw/PyCJV_V.txt";    
     public static void main(String[] args) {
         OpenScan sc = new OpenScan();
         System.out.println("PyCalc-JE : A Simple and Lightweight Calculator. Now in Java!\n" +
                            "Version : " + CURRENT_VERSION + "\n");  
-                           checkForUpdates();
+                           Net_Update.update("PyCalc-JE", CURRENT_VERSION , UPDATE_VERSION_URL); // Update Check using Net-Update
                            while (true) {
             System.out.println("Select a Mathematical Operation : \n" +
                                "1. Addition\n" + "2. Subtraction\n" + "3. Multiplication\n" + "4. Division\n" + "5. Exponents (x^y)\n" + "6. Square Root\n" +
                                "7. Cube Root\n" + "8. Approximate / Rounding\n" + "9. Heron's Formula\n" + "10. Simple Interest\n" + "11. Compound Interest\n" + "12. Prime No. Check\n" +
                                "13. Triangle Check\n" + "14. Right Triangle Check\n" + "15. Perimeter [Various Shapes]\n" + "16. Area [Various Shapes]\n" +
                                "17. Volume [Various Shapes]\n" + "18. Surface Area [Various Shapes]\n" + "19. Curved Surface Area [Various Shapes]\n" +
-                               "20. Diagonal Calculation [Various Shapes]\n" + "21. Factorial Calculator\n" + "22. Exit PyCalc-JE\n");
+                               "20. Diagonal Calculation [Various Shapes]\n" + "21. Factorial Calculator\n" + "22. Quadratic Equation Calculator\n" + "23. Exit PyCalc-JE\n");
             System.out.print("Enter choice [ 1 - 22 ] : ");
             String choice = sc.nextLine();
             System.out.println();
@@ -643,9 +599,39 @@ public class PyCalc_JE {
                     System.out.println("Invalid input. Please enter an integer.\n");
                     sc.next(); // Consume the invalid input
                 }
-            } else if (choice.equals("22")) { // Exit Program
-                System.out.println("Exiting PyCalc-JE....");
-                sc.close(); // Close the sc
+            } else if (choice.equals("22")) { // Quadratic Equation Solver
+                try {
+                    System.out.print("Enter coefficient a : ");
+                    double a = sc.nextDouble();
+                    System.out.println();
+                    System.out.print("Enter coefficient b : ");
+                    double b = sc.nextDouble();
+                    System.out.println();
+                    System.out.print("Enter coefficient c : ");
+                    double c = sc.nextDouble();
+                    System.out.println();
+
+                    if (a == 0) {
+                        System.out.println("Coefficient 'a' cannot be zero for a quadratic equation.\n");
+                    } else {
+                        double d = Math.pow(b, 2) - 4 * a * c; // Discriminant
+                        if (d > 0) {
+                            double r1 = (-b + Math.sqrt(d)) / (2 * a); // First root
+                            double r2 = (-b - Math.sqrt(d)) / (2 * a); // Second root                            
+                            System.out.println("Roots are real and different:\nRoot 1: " + r1 + "\nRoot 2: " + r2 + "\n"); 
+                        } else if (d == 0) {
+                            double r = -b / (2 * a); // Single root
+                            System.out.println("Roots are real and the same:\nRoot: " + r + "\n");
+                        } else {
+                            System.out.println("Roots are Imaginary.\n");
+                        }
+                    }
+                } catch (java.util.InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter numbers only.\n");
+                    sc.next(); // Consume the invalid input
+                }
+            } else if (choice.equals("23")) { // Exit Program
+                sc.close(); // Close the sc                
                 System.exit(0);
             } else { // Default Case
                 System.out.println("Please enter a Valid Input! Restarting PyCalc-JE...\n");
@@ -662,7 +648,6 @@ public class PyCalc_JE {
                  System.out.println("Please enter a Valid Input! Restarting PyCalc ...\n");
             }
         }
-
         sc.close(); // Ensure sc is closed if loop is exited otherwise than System.exit(0)
     }
 }
