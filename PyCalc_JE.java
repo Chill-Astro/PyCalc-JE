@@ -13,7 +13,7 @@ public class PyCalc_JE {
                                "13. Triangle Check\n" + "14. Right Triangle Check\n" + "15. Perimeter [Various Shapes]\n" + "16. Area [Various Shapes]\n" +
                                "17. Volume [Various Shapes]\n" + "18. Surface Area [Various Shapes]\n" + "19. Curved Surface Area [Various Shapes]\n" +
                                "20. Diagonal Calculation [Various Shapes]\n" + "21. Factorial Calculator\n" + "22. Quadratic Equation Calculator\n" + "23. Exit PyCalc-JE\n");
-            System.out.print("Enter choice [ 1 - 22 ] : ");
+            System.out.print("Enter choice [ 1 - 23 ] : ");
             String choice = sc.nextLine();
             System.out.println();
             if (choice.equals("1")) { // Addition
