@@ -30,3 +30,9 @@ PyCalc - Java Edition [ JE ] is a spin of PyCalc but written fully in Java! It's
 ![image](https://github.com/user-attachments/assets/7aade0c8-a4ac-437c-aac8-a77731933dee)
 
 ---
+
+## Note from Developer :
+
+Appreciate my effort? Why not leave a Star ⭐ ! Also if forked, please credit me for my effort and thanks if you do! :)
+
+---
