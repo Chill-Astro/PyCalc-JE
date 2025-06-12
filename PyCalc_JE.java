@@ -1,5 +1,5 @@
 public class PyCalc_JE {
-    private static final String CURRENT_VERSION = "1.2"; // Net-Update Integration + Native Executable
+    private static final String CURRENT_VERSION = "1.2"; // Net-Update Integration + Native Executable + OpenScan v1.1
     private static final String UPDATE_VERSION_URL = "https://gist.github.com/Chill-Astro/b5f73cba04b79459db4ccdfad224fa54/raw/PyCJV_V.txt";    
     public static void main(String[] args) {
         OpenScan sc = new OpenScan();
