@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "PyCalc-JE"
-#define MyAppVersion "1.2"
+#define MyAppVersion "1.3"
 #define MyAppPublisher "Chill-Astro"
 #define MyAppURL "https://github.com/Chill-Astro/PyCalc-JE"
 #define MyAppExeName "PyCalc-JE.exe"
@@ -23,6 +23,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\Chill-Astro\{#MyAppName}
 UninstallDisplayIcon={app}\PyCalc-JE.ico
+LicenseFile=LICENSE.txt
 ; "ArchitecturesAllowed=x64compatible" specifies that Setup cannot run
 ; on anything but x64 and Windows 11 on Arm.
 ArchitecturesAllowed=x64compatible
