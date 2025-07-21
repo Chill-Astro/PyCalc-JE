@@ -19,6 +19,7 @@ PyCalc - Java Edition [ JE ] is a spin of PyCalc but written fully in Java! It's
 ## Install PyCalc-JE on Winget :
 
     winget install PyCalc-JE
+---
 
 ## Installation and Requirements :
 
