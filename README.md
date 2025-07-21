@@ -16,7 +16,7 @@ PyCalc - Java Edition [ JE ] is a spin of PyCalc but written fully in Java! It's
 
 ---
 
-### Install PyCalc-JE on Winget :
+## Install PyCalc-JE on Winget :
 
     winget install PyCalc-JE
 
@@ -29,6 +29,12 @@ PyCalc - Java Edition [ JE ] is a spin of PyCalc but written fully in Java! It's
 
 ---
 
+## Preview :
+
+![image](https://github.com/user-attachments/assets/7aade0c8-a4ac-437c-aac8-a77731933dee)
+
+---
+
 ## ⚠️ IMPORTANT NOTICE ⚠️
 
 Please be aware: There are fraudulent repositories on GitHub that are cloning this project's name and using AI-generated readmes, but they contain **completely random and unrelated files in each release**. These are NOT official versions of this project.
@@ -37,12 +43,6 @@ Please be aware: There are fraudulent repositories on GitHub that are cloning th
 `https://github.com/Chill-Astro/PyCalc-JE`
 
 I am trying my best to report these people.
-
----
-
-## Preview :
-
-![image](https://github.com/user-attachments/assets/7aade0c8-a4ac-437c-aac8-a77731933dee)
 
 ---
 
