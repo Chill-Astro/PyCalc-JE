@@ -37,7 +37,7 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputBaseFilename=PyCalc-JE-Setup
+OutputBaseFilename=PyC_JE-Setup
 SolidCompression=yes
 WizardStyle=modern
 DisableWelcomePage=no
